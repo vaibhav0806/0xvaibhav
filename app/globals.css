@@ -9,6 +9,8 @@
   --muted: #929591;
   --quiet: #81847f;
   --line: rgba(236, 236, 234, 0.1);
+  --selection: #e7a536;
+  --selection-text: #111212;
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
 }
 
@@ -20,6 +22,7 @@
 }
 
 * { box-sizing: border-box; }
+::selection { background: var(--selection); color: var(--selection-text); }
 html { scroll-behavior: smooth; scroll-padding-top: 80px; }
 body { margin: 0; background: var(--page); color: var(--text); font-family: var(--font-geist-sans), sans-serif; }
 body::before { content: ""; position: fixed; inset: 0; z-index: 25; pointer-events: none; opacity: 0.018; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E"); }
