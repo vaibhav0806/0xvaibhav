@@ -83,7 +83,6 @@ test("links and expands every experience company", () => {
     ["Push Chain", "https://push.org"],
     ["Instadapp", "https://instadapp.io"],
     ["vishwa.ai", "https://vishwa.ai"],
-    ["Froker", "https://froker.in"],
   ];
 
   for (const [name, href] of companies) {
@@ -92,7 +91,7 @@ test("links and expands every experience company", () => {
 
   expect(screen.getByText("Workflow Engineer")).toBeVisible();
   expect(screen.getByText("Product Engineering Intern")).toBeVisible();
-  expect(screen.getByText("SDE Intern")).toBeVisible();
+  expect(within(experience).queryByRole("link", { name: "Froker" })).not.toBeInTheDocument();
   expect(experience.querySelectorAll(".experience-logo")).toHaveLength(companies.length);
 });
 

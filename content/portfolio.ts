@@ -37,7 +37,6 @@ export const experience: ExperienceItem[] = [
   { company: "Push Chain", role: "Integration and Ecosystem Intern", period: "Oct 2023 - Aug 2024", href: "https://push.org" },
   { company: "Instadapp", role: "Workflow Engineer", period: "Mar 2024 - Apr 2024", href: "https://instadapp.io" },
   { company: "vishwa.ai", role: "Product Engineering Intern", period: "Oct 2023 - Dec 2023", href: "https://vishwa.ai" },
-  { company: "Froker", role: "SDE Intern", period: "Feb 2023 - Apr 2023", href: "https://froker.in" },
 ];
 
 export const stack = [
