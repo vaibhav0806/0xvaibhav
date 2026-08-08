@@ -6,5 +6,24 @@ import { WorkCard } from "@/components/work-card";
 import { featuredWork } from "@/content/portfolio";
 
 export default function Home() {
-  return <main><div className="shell"><SiteHeader /><Hero /><section id="work"><p className="eyebrow">Selected work</p><h2>Built for real constraints.</h2><div className="work-grid">{featuredWork.map((work) => <WorkCard key={work.title} work={work} />)}</div></section><section id="experience"><p className="eyebrow">Experience</p><h2>Building in public and in production.</h2><ExperienceList /></section><Contact /></div></main>;
+  return (
+    <main>
+      <div className="shell">
+        <SiteHeader />
+        <Hero />
+        <section id="work" className="chapter">
+          <div className="chapter-heading"><h2>Selected work</h2><p>Systems, products, and experiments I&apos;ve taken from idea to reality.</p></div>
+          <div className="work-list">{featuredWork.map((work, index) => <WorkCard key={work.title} work={work} index={index} />)}</div>
+        </section>
+        <section id="experience" className="chapter experience">
+          <div className="chapter-heading"><h2>Experience</h2><p>A fast-moving path through product engineering, crypto, and AI infrastructure.</p></div>
+          <ExperienceList />
+        </section>
+        <Contact />
+      </div>
+      <nav className="dock" aria-label="Portfolio navigation">
+        <a href="#top">Home</a><a href="#work">Work</a><a href="#experience">Experience</a><a href="#contact">Contact</a>
+      </nav>
+    </main>
+  );
 }

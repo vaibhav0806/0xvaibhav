@@ -1,3 +1,11 @@
 export function SiteHeader() {
-  return <header className="site-header"><a href="#top" className="mark">VP</a><nav aria-label="Primary"><a href="#work">Work</a><a href="#experience">Experience</a><a href="#contact">Contact</a></nav></header>;
+  return (
+    <header className="site-header">
+      <a href="#top" className="identity-link" aria-label="Vaibhav Pandey, home">
+        <span className="identity-mark">VP</span>
+        <span>Vaibhav Pandey</span>
+      </a>
+      <p className="availability"><span aria-hidden="true" /> Bengaluru, India</p>
+    </header>
+  );
 }
