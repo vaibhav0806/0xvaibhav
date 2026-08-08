@@ -1,0 +1,2 @@
+import { links, profile } from "@/content/portfolio";
+export function Hero() { return <section className="hero" id="top"><p className="eyebrow">Bengaluru, India · Open to backend, FDE & DevRel conversations</p><h1>{profile.name}</h1><p className="title">{profile.title}</p><p className="summary">{profile.summary}</p><p className="now">{profile.now}</p><div className="links"><a href={links.github}>GitHub ↗</a><a href={links.linkedin}>LinkedIn ↗</a><a href={links.email}>Email ↗</a></div></section>; }
