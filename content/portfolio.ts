@@ -17,8 +17,8 @@ export const links = {
 };
 
 export const featuredWork: WorkItem[] = [
+  { title: "Kairo", eyebrow: "AI product", period: "2026", description: "A screen-native macOS AI tutor that turns voice and screen context into visual guidance while keeping provider keys server-side.", stack: ["TypeScript", "Rust", "Fastify", "PostgreSQL"], href: "https://github.com/vaibhav0806/kairo-tutor" },
   { title: "era", eyebrow: "ephemeral runtime agent", period: "2026", description: "A personal agent orchestrator that turns Telegram tasks into sandboxed, budgeted coding runs and GitHub pull requests.", stack: ["Go", "Docker", "SQLite", "GitHub Apps"], href: "https://github.com/vaibhav0806/era" },
-  { title: "Kairo Tutor", eyebrow: "AI product", period: "2026", description: "A screen-native macOS AI tutor that turns voice and screen context into visual guidance while keeping provider keys server-side.", stack: ["TypeScript", "Rust", "Fastify", "PostgreSQL"], href: "https://github.com/vaibhav0806/kairo-tutor" },
   { title: "Prophet", eyebrow: "Trading agent", period: "2026", description: "An autonomous agent that finds and executes delta-neutral arbitrage across three BNB Chain prediction-market order books.", stack: ["TypeScript", "Hono", "Solidity", "MCP"], href: "https://github.com/vaibhav0806/prophet" },
   { title: "DFlow SDK", eyebrow: "Developer SDK", period: "2026", description: "A published TypeScript and Python SDK for DFlow prediction markets on Solana, with typed clients, live data, swaps, and transaction helpers.", stack: ["TypeScript", "Python", "WebSockets", "Solana"], href: "https://github.com/vaibhav0806/dflow-sdk" },
   { title: "Cloak", eyebrow: "Privacy product", period: "2026", description: "A privacy-preserving Solana DCA app that separates deposits from scheduled trades through a shielded pool and session wallets.", stack: ["Next.js", "PostgreSQL", "Solana", "Zero-knowledge"], href: "https://github.com/vaibhav0806/cloak-dca" },

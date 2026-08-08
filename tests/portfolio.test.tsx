@@ -22,7 +22,7 @@ test("leads with the approved compact positioning", () => {
 test("shows the approved public project archive and a direct contact link", () => {
   render(<Home />);
   expect(screen.getAllByRole("article")).toHaveLength(11);
-  expect(screen.getByRole("heading", { name: "Kairo Tutor" })).toBeVisible();
+  expect(screen.getByRole("heading", { name: "Kairo" })).toBeVisible();
   expect(screen.getByRole("heading", { name: "Prophet" })).toBeVisible();
   expect(screen.getByRole("heading", { name: "DFlow SDK" })).toBeVisible();
   expect(screen.getByRole("heading", { name: "Cloak" })).toBeVisible();
@@ -41,6 +41,13 @@ test("shows the approved public project archive and a direct contact link", () =
   expect(era).not.toBeNull();
   expect(within(era!).getByText("ephemeral runtime agent")).toBeVisible();
   expect(screen.getByRole("link", { name: /email vaibhav/i })).toHaveAttribute("href", "mailto:vaibhav.pandey0806@gmail.com");
+});
+
+test("keeps Kairo first in featured work", () => {
+  render(<Home />);
+  const [firstProject] = screen.getAllByRole("article");
+
+  expect(within(firstProject).getByRole("heading", { name: "Kairo" })).toBeVisible();
 });
 
 test("positions and links PermaSign", () => {
@@ -86,7 +93,7 @@ test("links and expands every experience company", () => {
 test("moves one shared highlight through featured work", () => {
   render(<Home />);
   const era = screen.getByRole("heading", { name: "era" }).closest("article");
-  const kairo = screen.getByRole("heading", { name: "Kairo Tutor" }).closest("article");
+  const kairo = screen.getByRole("heading", { name: "Kairo" }).closest("article");
 
   fireEvent.mouseEnter(era!);
   expect(document.querySelectorAll(".work-hover-bg")).toHaveLength(1);
