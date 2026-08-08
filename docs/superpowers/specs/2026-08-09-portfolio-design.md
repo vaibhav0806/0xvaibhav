@@ -32,12 +32,24 @@ The homepage is a personal-brand landing page with a serious technical core.
 
 ## Visual Direction
 
-- Dark, monochrome, editorial visual language.
-- Narrow, highly legible reading column with generous whitespace.
-- Strong sans-serif hero typography; disciplined type scale and muted supporting text.
-- Restrained borders and small interaction details as the only visual flourish.
-- Content-first layout: no gradients, terminal widgets, decorative dashboards, or contribution heatmaps.
-- Inspiration: the authored landing-page structure of saura3h.xyz, with the content density and navigation clarity of mrmehta.in below the fold. The implementation must be visually original.
+- Dark, monochrome, editorial visual language on a wide 960-1080px canvas.
+- Left-aligned authored hero with a compact identity line and a maximum two-line positioning statement.
+- Geist sans and mono typography with disciplined scale, generous chapter spacing, and muted supporting text.
+- No neon accent, generic card grid, gradients, terminal widgets, decorative dashboards, or contribution heatmaps.
+- Selected work appears as large editorial rows with impact, role, year, and an optional visual preview.
+- A compact bottom dock provides persistent navigation without copying the reference implementation.
+- Inspiration: the authored landing-page structure of saura3h.xyz, Emil Kowalski's typographic restraint, and mrmehta.in's content clarity. The result must remain visually original.
+
+## Motion Direction
+
+- Motion exists for hierarchy, feedback, or spatial continuity; nothing moves only for decoration.
+- Hero elements reveal once with a 40-60ms stagger and strong ease-out timing.
+- Project preview transitions use opacity and `scale(0.96)` to `scale(1)`; never animate from `scale(0)`.
+- Pressable elements use subtle `scale(0.97)` feedback within 100-160ms.
+- Section entrances are brief and interruptible, using transform and opacity only.
+- Shared motion tokens use `cubic-bezier(0.23, 1, 0.32, 1)` for entrances and `cubic-bezier(0.77, 0, 0.175, 1)` for on-screen movement.
+- `prefers-reduced-motion` removes positional movement while preserving useful opacity and color feedback.
+- No perpetual animation, scroll hijacking, or mandatory GSAP sequence.
 
 ## Content Principles
 
