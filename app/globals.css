@@ -33,7 +33,7 @@ a:focus-visible { outline: 1px solid var(--text); outline-offset: 4px; }
 
 .hero { position: relative; isolation: isolate; padding-bottom: 128px; }
 .hero > :not(.hero-shader) { position: relative; z-index: 1; }
-.hero-shader { position: absolute; top: -138px; left: 50%; z-index: 0; width: min(1040px, 100vw); height: 440px; overflow: hidden; opacity: .32; pointer-events: none; transform: translateX(-50%); filter: saturate(.52) contrast(1.06); mask-image: radial-gradient(ellipse 72% 74% at 58% 38%, black 0 36%, rgba(0,0,0,.72) 54%, transparent 78%); }
+.hero-shader { position: absolute; top: -138px; left: 50%; z-index: 0; width: min(1040px, 100vw); height: 440px; overflow: hidden; opacity: .32; pointer-events: none; transform: translateX(-50%); filter: saturate(.52) contrast(1.06); mask-image: radial-gradient(ellipse 64% 74% at 66% 38%, black 0 34%, rgba(0,0,0,.72) 52%, transparent 76%); }
 .hero-shader canvas { position: absolute !important; inset: 0; z-index: 1; }
 .hero-shader::before, .hero-shader::after { content: ""; position: absolute; pointer-events: none; }
 .hero-shader::before { inset: -24%; z-index: 0; background: radial-gradient(circle at 22% 38%, rgba(154,174,163,.38), transparent 28%), radial-gradient(circle at 72% 30%, rgba(70,87,79,.56), transparent 31%), radial-gradient(ellipse at 58% 76%, rgba(116,132,123,.32), transparent 36%); filter: blur(18px); animation: hero-gradient-drift 16s var(--ease-out) infinite alternate; }
@@ -151,7 +151,7 @@ a:focus-visible { outline: 1px solid var(--text); outline-offset: 4px; }
   .shell { width: min(100% - 32px, 680px); }
   .site-header { padding-top: 72px; margin-bottom: 44px; }
   .hero { padding-bottom: 104px; }
-  .hero-shader { top: -112px; width: 100vw; height: 360px; opacity: .22; mask-image: radial-gradient(ellipse 82% 72% at 58% 34%, black 0 28%, rgba(0,0,0,.65) 48%, transparent 76%); }
+  .hero-shader { top: -112px; width: 100vw; height: 360px; opacity: .22; mask-image: radial-gradient(ellipse 74% 72% at 64% 34%, black 0 28%, rgba(0,0,0,.65) 48%, transparent 74%); }
   .hero h1 { letter-spacing: -.075em; }
   .hero-line { gap: .24em; }
   .hero-intro { margin-top: 32px; }
