@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Vaibhav Pandey — Backend & Infrastructure Engineer",
+  title: "Vaibhav Pandey - Backend & Infrastructure Engineer",
   description: "Portfolio of Vaibhav Pandey, Backend & Infrastructure Engineer.",
 };
 

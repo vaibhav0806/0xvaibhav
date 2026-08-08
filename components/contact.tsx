@@ -3,10 +3,13 @@ import { links } from "@/content/portfolio";
 export function Contact() {
   return (
     <section id="contact" className="contact">
-      <p>Have an ambitious system to build?</p>
-      <h2>Let&apos;s talk.</h2>
-      <a className="email" href={links.email}>Email Vaibhav <span>↗</span></a>
-      <footer><span>© 2026 Vaibhav Pandey</span><span>0xvaibhav.com</span></footer>
+      <h2>Have a hard system to build?</h2>
+      <p>I&apos;m open to backend, FDE, and DevRel roles with ambitious technical teams.</p>
+      <a className="email" href={links.email}>Email Vaibhav <span aria-hidden="true">↗</span></a>
+      <footer>
+        <span>© 2026 Vaibhav Pandey</span>
+        <div><a href={links.github} target="_blank" rel="noreferrer">GitHub</a><a href={links.linkedin} target="_blank" rel="noreferrer">LinkedIn</a><a href={links.twitter} target="_blank" rel="noreferrer">X</a></div>
+      </footer>
     </section>
   );
 }

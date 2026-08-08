@@ -23,28 +23,27 @@ This is deliberately preferred over "Systems Engineer": it is clear, accurate, a
 
 The homepage is a personal-brand landing page with a serious technical core.
 
-1. **Hero** — name, working title, concise promise, and links to GitHub, LinkedIn, email, and resume.
-2. **Now** — current role at NodeOps / CreateOS, current areas of work, and openness to relevant conversations.
-3. **Selected work** — three or four evidence-rich projects or roles, each structured as problem, contribution, and outcome.
-4. **Experience** — compact chronological history, prioritizing scope and impact over a resume duplicate.
-5. **Systems and writing** — technical notes, talks, system-design thinking, or useful experiments. It supports FDE and DevRel credibility without requiring an editorial cadence at launch.
-6. **Contact** — direct email CTA and quiet social links.
+1. **Hero** - name, working title, concise promise, and direct email and GitHub actions.
+2. **About** - current role at CreateOS, current areas of work, and compact chronological experience.
+3. **Featured work** - a dense project archive spanning backend infrastructure, AI products, developer tools, crypto systems, and one credited private collaboration.
+4. **Stack** - a concise technical toolkit.
+5. **Contact** - direct email CTA and quiet social links.
 
 ## Visual Direction
 
-- Dark, monochrome, editorial visual language on a wide 960-1080px canvas.
-- Left-aligned authored hero with a compact identity line and a maximum two-line positioning statement.
-- Geist sans and mono typography with disciplined scale, generous chapter spacing, and muted supporting text.
+- Dark, monochrome visual language on an intimate 680px canvas.
+- Left-aligned authored hero with a small portrait, compact identity line, and a two-line positioning statement.
+- Geist sans and mono typography with a 44px desktop display scale, dense project rows, and muted supporting text.
 - No neon accent, generic card grid, gradients, terminal widgets, decorative dashboards, or contribution heatmaps.
-- Selected work appears as large editorial rows with impact, role, year, and an optional visual preview.
-- A compact bottom dock provides persistent navigation without copying the reference implementation.
+- Featured work appears as a compact project ledger with impact, role, year, and technical context.
+- A compact icon dock and masked page-edge blur provide persistent navigation and depth without copying the reference implementation.
 - Inspiration: the authored landing-page structure of saura3h.xyz, Emil Kowalski's typographic restraint, and mrmehta.in's content clarity. The result must remain visually original.
 
 ## Motion Direction
 
 - Motion exists for hierarchy, feedback, or spatial continuity; nothing moves only for decoration.
-- Hero elements reveal once with a 40-60ms stagger and strong ease-out timing.
-- Project preview transitions use opacity and `scale(0.96)` to `scale(1)`; never animate from `scale(0)`.
+- Hero words reveal once with a 65ms stagger, blur, and strong ease-out timing.
+- Project transitions use restrained background, opacity, and arrow movement.
 - Pressable elements use subtle `scale(0.97)` feedback within 100-160ms.
 - Section entrances are brief and interruptible, using transform and opacity only.
 - Shared motion tokens use `cubic-bezier(0.23, 1, 0.32, 1)` for entrances and `cubic-bezier(0.77, 0, 0.175, 1)` for on-screen movement.
@@ -69,13 +68,9 @@ The homepage is a personal-brand landing page with a serious technical core.
 
 ## Featured Work
 
-### CoinDCX Trade Report
+The project archive features era, Kairo Tutor, Prophet, DFlow SDK, Cloak, SEO Workflow, Beacon, PermaSign, Pixel Tamagotchi, Tech Digest, and Coduel. era leads as the backend and infrastructure flagship. PermaSign is positioned as Web3-native document signing and links to its public collaboration repository.
 
-The flagship case study. Vaibhav built the product end to end to help Indian crypto users generate tax-ready trade reports. The public story may state that reports were delivered in under a minute, the launch handled approximately 100,000 requests in its first week, and it served approximately 15,000-20,000 requests per day at peak. Do not disclose its AWS architecture or other internal implementation details.
-
-### Era
-
-The second featured case study, selected because it is public and inspectable. It demonstrates personal technical taste and agent-system work without relying on private employer context.
+CoinDCX remains part of the experience timeline but is not presented as a featured project.
 
 ### CreateOS
 
