@@ -50,6 +50,12 @@ test("keeps Kairo first in featured work", () => {
   expect(within(firstProject).getByRole("heading", { name: "Kairo" })).toBeVisible();
 });
 
+test("links Kairo from the about section", () => {
+  render(<Home />);
+
+  expect(screen.getByRole("link", { name: "Kairo" })).toHaveAttribute("href", "https://meetkairo.xyz");
+});
+
 test("positions and links PermaSign", () => {
   render(<Home />);
   const permaSign = screen.getByRole("heading", { name: "PermaSign" }).closest("article");

@@ -30,6 +30,9 @@ export default function Home() {
             <p>
               At <a className="current-company" href="https://createos.sh" target="_blank" rel="noreferrer">CreateOS</a>, {profile.now}
             </p>
+            <p>
+              I&apos;m currently building <a className="current-company" href="https://meetkairo.xyz" target="_blank" rel="noreferrer">Kairo</a>, a screen-native AI tutor that turns voice and screen context into visual guidance.
+            </p>
           </Reveal>
           <Reveal delay={0.08}><ExperienceList /></Reveal>
         </section>
