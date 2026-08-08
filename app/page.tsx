@@ -1,8 +1,9 @@
 import { Contact } from "@/components/contact";
 import { ExperienceList } from "@/components/experience-list";
 import { Hero } from "@/components/hero";
+import { ProjectRow } from "@/components/project-row";
+import { Reveal } from "@/components/reveal";
 import { SiteHeader } from "@/components/site-header";
-import { WorkCard } from "@/components/work-card";
 import { featuredWork } from "@/content/portfolio";
 
 export default function Home() {
@@ -12,12 +13,12 @@ export default function Home() {
         <SiteHeader />
         <Hero />
         <section id="work" className="chapter">
-          <div className="chapter-heading"><h2>Selected work</h2><p>Systems, products, and experiments I&apos;ve taken from idea to reality.</p></div>
-          <div className="work-list">{featuredWork.map((work, index) => <WorkCard key={work.title} work={work} index={index} />)}</div>
+          <Reveal className="chapter-heading"><h2>Selected work</h2><p>Systems, products, and experiments I&apos;ve taken from idea to reality.</p></Reveal>
+          <div className="work-list">{featuredWork.map((work, index) => <ProjectRow key={work.title} work={work} index={index} />)}</div>
         </section>
         <section id="experience" className="chapter experience">
-          <div className="chapter-heading"><h2>Experience</h2><p>A fast-moving path through product engineering, crypto, and AI infrastructure.</p></div>
-          <ExperienceList />
+          <Reveal className="chapter-heading"><h2>Experience</h2><p>A fast-moving path through product engineering, crypto, and AI infrastructure.</p></Reveal>
+          <Reveal><ExperienceList /></Reveal>
         </section>
         <Contact />
       </div>
