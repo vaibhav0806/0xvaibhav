@@ -1,4 +1,9 @@
 import { metadata } from "@/app/layout";
+import {
+  alt as openGraphAlt,
+  contentType as openGraphContentType,
+  size as openGraphSize,
+} from "@/app/opengraph-image";
 import Home from "@/app/page";
 import robots from "@/app/robots";
 import sitemap from "@/app/sitemap";
@@ -48,4 +53,12 @@ test("publishes crawl discovery routes", () => {
     host: "https://www.0xvaibhav.com",
   });
   expect(sitemap()).toEqual([{ url: "https://www.0xvaibhav.com" }]);
+});
+
+test("publishes a large social preview image", () => {
+  expect(openGraphSize).toEqual({ width: 1200, height: 630 });
+  expect(openGraphAlt).toBe(
+    "Vaibhav Pandey, Backend Engineer and Infrastructure Builder",
+  );
+  expect(openGraphContentType).toBe("image/png");
 });
