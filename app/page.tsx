@@ -2,10 +2,10 @@ import { Contact } from "@/components/contact";
 import { ExperienceList } from "@/components/experience-list";
 import { FeaturedWork } from "@/components/featured-work";
 import { Hero } from "@/components/hero";
+import { PortfolioDock } from "@/components/portfolio-dock";
 import { Reveal } from "@/components/reveal";
 import { SiteHeader } from "@/components/site-header";
 import { links, profile, site, stack } from "@/content/portfolio";
-import { Code, EnvelopeSimple, GithubLogo, House, LinkedinLogo, XLogo } from "@phosphor-icons/react/dist/ssr";
 
 export default function Home() {
   const profilePageJsonLd = {
@@ -62,15 +62,7 @@ export default function Home() {
         }}
       />
       <div className="edge-blur edge-blur-top" aria-hidden="true"><span /><span /><span /></div>
-      <nav className="dock" aria-label="Portfolio navigation">
-        <a href="#top" aria-label="Home" data-tooltip="Home"><House weight="bold" /></a>
-        <a href="#work" aria-label="Work" data-tooltip="Work"><Code weight="bold" /></a>
-        <span className="dock-separator" aria-hidden="true" />
-        <a href={links.github} target="_blank" rel="noreferrer" aria-label="GitHub" data-tooltip="GitHub"><GithubLogo weight="bold" /></a>
-        <a href={links.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn" data-tooltip="LinkedIn"><LinkedinLogo weight="bold" /></a>
-        <a href={links.twitter} target="_blank" rel="noreferrer" aria-label="X" data-tooltip="X"><XLogo weight="bold" /></a>
-        <a href="#contact" aria-label="Contact" data-tooltip="Contact"><EnvelopeSimple weight="bold" /></a>
-      </nav>
+      <PortfolioDock />
       <div className="shell">
         <SiteHeader />
         <Hero />

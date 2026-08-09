@@ -122,6 +122,35 @@ a:focus-visible { outline: 1px solid var(--text); outline-offset: 4px; }
 .contact footer a { transition: color 180ms ease; }
 .contact footer a:hover { color: var(--text); }
 
+.case-study-shell { padding-bottom: 152px; }
+.case-study { padding-bottom: 24px; }
+.case-study-back { display: inline-flex; margin-bottom: 42px; color: var(--quiet); font-family: var(--font-geist-mono), monospace; font-size: 11px; transition: color 180ms ease, transform 180ms var(--ease-out); }
+.case-study-back:hover { color: var(--text); transform: translateX(-3px); }
+.case-study-header { padding-bottom: 72px; border-bottom: 1px solid var(--line); }
+.case-study-kicker { margin: 0 0 18px; color: var(--quiet); font-family: var(--font-geist-mono), monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .09em; }
+.case-study-kicker span { margin: 0 7px; color: rgba(236,236,234,.28); }
+.case-study-header h1 { max-width: 620px; margin: 0; color: var(--text); font-size: clamp(34px, 7vw, 56px); font-weight: 510; letter-spacing: -.06em; line-height: 1.04; }
+.case-study-summary { max-width: 590px; margin: 28px 0 0; color: var(--muted); font-size: 16px; line-height: 1.7; }
+.case-study-stack { display: flex; flex-wrap: wrap; gap: 8px; padding: 0; margin: 28px 0 0; list-style: none; }
+.case-study-stack li { padding: 7px 10px; border: 1px solid var(--line); border-radius: 999px; color: var(--quiet); font-family: var(--font-geist-mono), monospace; font-size: 10px; }
+.case-study-actions { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 30px; }
+.case-study-actions a { color: #c9cbc7; font-size: 12px; transition: color 180ms ease; }
+.case-study-actions a:hover { color: var(--text); }
+.case-study-actions span { display: inline-block; margin-left: 3px; transition: transform 180ms var(--ease-out); }
+.case-study-actions a:hover span { transform: translate(2px, -2px); }
+.case-study-sections { padding: 78px 0 64px; }
+.case-study-sections section { display: grid; grid-template-columns: 150px 1fr; gap: 34px; padding: 0 0 66px; }
+.case-study-sections section:last-child { padding-bottom: 0; }
+.case-study-sections h2 { margin: 2px 0 0; color: #d6d7d4; font-size: 14px; font-weight: 580; letter-spacing: -.015em; }
+.case-study-sections p { margin: 0 0 16px; color: var(--muted); font-size: 14px; line-height: 1.72; }
+.case-study-sections p:last-child { margin-bottom: 0; }
+.case-study-sections ul { padding: 0; margin: 22px 0 0; list-style: none; }
+.case-study-sections li { position: relative; padding: 0 0 12px 16px; color: var(--muted); font-size: 13px; line-height: 1.65; }
+.case-study-sections li::before { content: "↳"; position: absolute; left: 0; color: var(--quiet); }
+.case-study-footer { display: flex; justify-content: space-between; padding-top: 24px; border-top: 1px solid var(--line); color: var(--quiet); font-family: var(--font-geist-mono), monospace; font-size: 10px; }
+.case-study-footer a { transition: color 180ms ease; }
+.case-study-footer a:hover { color: var(--text); }
+
 .dock { position: fixed; left: 50%; bottom: max(16px, env(safe-area-inset-bottom)); z-index: 40; display: flex; align-items: center; gap: 2px; padding: 5px; border: 1px solid rgba(255,255,255,.09); border-radius: 14px; background: rgba(18,19,19,.76); box-shadow: 0 18px 52px rgba(0,0,0,.38), inset 0 1px 0 rgba(255,255,255,.055); backdrop-filter: blur(18px) saturate(130%); transform: translateX(-50%); }
 .dock a { position: relative; display: grid; place-items: center; width: 44px; height: 44px; border-radius: 10px; color: #777a76; transition: color 180ms ease, background 180ms ease, transform 220ms var(--ease-out); }
 .dock a svg { width: 18px; height: 18px; }
@@ -170,6 +199,12 @@ a:focus-visible { outline: 1px solid var(--text); outline-offset: 4px; }
   .stack-group h3 { margin-top: 0; }
   .contact { padding: 72px 0 104px; }
   .contact footer { align-items: flex-start; flex-direction: column-reverse; gap: 18px; margin-top: 72px; }
+  .case-study-shell { padding-bottom: 128px; }
+  .case-study-back { margin-bottom: 34px; }
+  .case-study-header { padding-bottom: 58px; }
+  .case-study-sections { padding: 62px 0 56px; }
+  .case-study-sections section { grid-template-columns: 1fr; gap: 18px; padding-bottom: 54px; }
+  .case-study-footer { gap: 16px; }
   .edge-blur { height: 84px; }
 }
 

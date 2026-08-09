@@ -11,6 +11,8 @@ type ProjectRowProps = {
 };
 
 export function ProjectRow({ work, active, reduceMotion, onActivate }: ProjectRowProps) {
+  const primaryHref = work.caseStudy ?? work.href;
+  const isExternal = primaryHref?.startsWith("http");
   const content = (
     <>
       <div className="work-heading">
@@ -20,7 +22,7 @@ export function ProjectRow({ work, active, reduceMotion, onActivate }: ProjectRo
         </div>
         <div className="work-actions">
           <time>{work.period}</time>
-          {work.href && <span className="work-arrow" aria-hidden="true">↗</span>}
+          {primaryHref && <span className="work-arrow" aria-hidden="true">↗</span>}
         </div>
       </div>
       <p className="work-description">{work.description}</p>
@@ -40,8 +42,8 @@ export function ProjectRow({ work, active, reduceMotion, onActivate }: ProjectRo
           aria-hidden="true"
         />
       )}
-      {work.href ? (
-        <a href={work.href} target="_blank" rel="noreferrer" aria-label={`View ${work.title} on GitHub`}>{content}</a>
+      {primaryHref ? (
+        <a href={primaryHref} target={isExternal ? "_blank" : undefined} rel={isExternal ? "noreferrer" : undefined}>{content}</a>
       ) : (
         <div>{content}</div>
       )}

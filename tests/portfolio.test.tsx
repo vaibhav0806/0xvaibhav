@@ -33,13 +33,10 @@ test("shows the approved public project archive and a direct contact link", () =
   expect(screen.getByRole("heading", { name: "Tech Digest" })).toBeVisible();
   expect(screen.getByRole("heading", { name: "Coduel" })).toBeVisible();
   expect(screen.queryByRole("heading", { name: "Git Wrapped" })).not.toBeInTheDocument();
-  expect(screen.getByRole("link", { name: "View era on GitHub" })).toHaveAttribute(
-    "href",
-    "https://github.com/vaibhav0806/era",
-  );
   const era = screen.getByRole("heading", { name: "era" }).closest("article");
   expect(era).not.toBeNull();
   expect(within(era!).getByText("ephemeral runtime agent")).toBeVisible();
+  expect(within(era!).getByRole("link")).toHaveAttribute("href", "/work/era");
   expect(screen.getByRole("link", { name: /email vaibhav/i })).toHaveAttribute("href", "mailto:vaibhav.pandey0806@gmail.com");
 });
 
@@ -48,6 +45,21 @@ test("keeps Kairo first in featured work", () => {
   const [firstProject] = screen.getAllByRole("article");
 
   expect(within(firstProject).getByRole("heading", { name: "Kairo" })).toBeVisible();
+});
+
+test("links flagship projects to internal case studies", () => {
+  render(<Home />);
+  const caseStudyLinks = [
+    ["Kairo", "/work/kairo"],
+    ["era", "/work/era"],
+    ["DFlow SDK", "/work/dflow-sdk"],
+  ];
+
+  for (const [title, href] of caseStudyLinks) {
+    const project = screen.getByRole("heading", { name: title }).closest("article");
+    expect(project).not.toBeNull();
+    expect(within(project!).getByRole("link")).toHaveAttribute("href", href);
+  }
 });
 
 test("links Kairo from the about section", () => {
@@ -61,7 +73,7 @@ test("positions and links PermaSign", () => {
   const permaSign = screen.getByRole("heading", { name: "PermaSign" }).closest("article");
   expect(permaSign).not.toBeNull();
   expect(within(permaSign!).getByText("Web3-native document signing")).toBeVisible();
-  expect(within(permaSign!).getByRole("link", { name: "View PermaSign on GitHub" })).toHaveAttribute(
+  expect(within(permaSign!).getByRole("link")).toHaveAttribute(
     "href",
     "https://github.com/Prasad-178/PermaSign",
   );

@@ -1,9 +1,13 @@
 import Image from "next/image";
 
-export function SiteHeader() {
+type SiteHeaderProps = {
+  homeHref?: string;
+};
+
+export function SiteHeader({ homeHref = "#top" }: SiteHeaderProps) {
   return (
     <header className="site-header">
-      <a href="#top" className="identity-link" aria-label="Vaibhav Pandey, home">
+      <a href={homeHref} className="identity-link" aria-label="Vaibhav Pandey, home">
         <Image
           className="identity-image"
           src="https://github.com/vaibhav0806.png?size=96"

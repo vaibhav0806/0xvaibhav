@@ -1,4 +1,4 @@
-export type WorkItem = { title: string; eyebrow: string; period: string; description: string; stack: string[]; href?: string };
+export type WorkItem = { title: string; eyebrow: string; period: string; description: string; stack: string[]; href?: string; caseStudy?: string };
 export type ExperienceItem = { company: string; role: string; period: string; href: string };
 
 export const site = {
@@ -24,10 +24,10 @@ export const links = {
 };
 
 export const featuredWork: WorkItem[] = [
-  { title: "Kairo", eyebrow: "AI product", period: "2026", description: "A screen-native macOS AI tutor that turns voice and screen context into visual guidance while keeping provider keys server-side.", stack: ["TypeScript", "Rust", "Fastify", "PostgreSQL"], href: "https://github.com/vaibhav0806/kairo-tutor" },
-  { title: "era", eyebrow: "ephemeral runtime agent", period: "2026", description: "A personal agent orchestrator that turns Telegram tasks into sandboxed, budgeted coding runs and GitHub pull requests.", stack: ["Go", "Docker", "SQLite", "GitHub Apps"], href: "https://github.com/vaibhav0806/era" },
+  { title: "Kairo", eyebrow: "AI product", period: "2026", description: "A screen-native macOS AI tutor that turns voice and screen context into visual guidance while keeping provider keys server-side.", stack: ["TypeScript", "Rust", "Fastify", "PostgreSQL"], href: "https://github.com/vaibhav0806/kairo-tutor", caseStudy: "/work/kairo" },
+  { title: "era", eyebrow: "ephemeral runtime agent", period: "2026", description: "A personal agent orchestrator that turns Telegram tasks into sandboxed, budgeted coding runs and GitHub pull requests.", stack: ["Go", "Docker", "SQLite", "GitHub Apps"], href: "https://github.com/vaibhav0806/era", caseStudy: "/work/era" },
   { title: "Prophet", eyebrow: "Trading agent", period: "2026", description: "An autonomous agent that finds and executes delta-neutral arbitrage across three BNB Chain prediction-market order books.", stack: ["TypeScript", "Hono", "Solidity", "MCP"], href: "https://github.com/vaibhav0806/prophet" },
-  { title: "DFlow SDK", eyebrow: "Developer SDK", period: "2026", description: "A published TypeScript and Python SDK for DFlow prediction markets on Solana, with typed clients, live data, swaps, and transaction helpers.", stack: ["TypeScript", "Python", "WebSockets", "Solana"], href: "https://github.com/vaibhav0806/dflow-sdk" },
+  { title: "DFlow SDK", eyebrow: "Developer SDK", period: "2026", description: "A published TypeScript and Python SDK for DFlow prediction markets on Solana, with typed clients, live data, swaps, and transaction helpers.", stack: ["TypeScript", "Python", "WebSockets", "Solana"], href: "https://github.com/vaibhav0806/dflow-sdk", caseStudy: "/work/dflow-sdk" },
   { title: "Cloak", eyebrow: "Privacy product", period: "2026", description: "A privacy-preserving Solana DCA app that separates deposits from scheduled trades through a shielded pool and session wallets.", stack: ["Next.js", "PostgreSQL", "Solana", "Zero-knowledge"], href: "https://github.com/vaibhav0806/cloak-dca" },
   { title: "SEO Workflow", eyebrow: "Agent workflow", period: "2026", description: "A Go workflow that diagnoses indexing problems, studies competitor patterns, and prepares reviewable SEO fixes as GitHub pull requests.", stack: ["Go", "Google Search Console", "GitHub API", "OpenRouter"], href: "https://github.com/vaibhav0806/seo-workflow" },
   { title: "Beacon", eyebrow: "Local-first tool", period: "2026", description: "A startup outreach workspace that scores fit, verifies contacts, drafts tailored emails, and tracks approval-based sending and follow-ups.", stack: ["TypeScript", "SQLite", "Resend", "YC data"], href: "https://github.com/vaibhav0806/beacon" },
