@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Vaibhav Pandey, Backend Engineer";
+export const alt = "0xvaibhav.com, Backend Engineer and Infrastructure Builder";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -39,24 +39,24 @@ export default function OpenGraphImage() {
               letterSpacing: 1.5,
             }}
           >
-            0XVAIBHAV.COM
+            0xvaibhav.com
           </div>
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
-          <div style={{ display: "flex", fontSize: 76, fontWeight: 650, letterSpacing: -4 }}>
-            Vaibhav Pandey
+          <div style={{ display: "flex", fontSize: 72, fontWeight: 650, letterSpacing: -4 }}>
+            Backend Engineer
           </div>
           <div
             style={{
               display: "flex",
               color: "#b6b8b4",
               fontFamily: "monospace",
-              fontSize: 38,
+              fontSize: 46,
               letterSpacing: -1.5,
             }}
           >
-            Backend Engineer
+            &amp; Infrastructure Builder.
           </div>
         </div>
 
