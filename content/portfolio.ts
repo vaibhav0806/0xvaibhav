@@ -1,6 +1,13 @@
 export type WorkItem = { title: string; eyebrow: string; period: string; description: string; stack: string[]; href?: string };
 export type ExperienceItem = { company: string; role: string; period: string; href: string };
 
+export const site = {
+  url: "https://www.0xvaibhav.com",
+  title: "Vaibhav Pandey | Backend Engineer & Infrastructure Builder",
+  description: "Vaibhav Pandey builds secure, scalable backend systems and AI infrastructure with Go, Node.js, and Python. Explore his experience and selected projects.",
+  image: "https://www.0xvaibhav.com/avatar.jpg",
+};
+
 export const profile = {
   name: "Vaibhav Pandey",
   title: "Backend & Infrastructure Engineer",

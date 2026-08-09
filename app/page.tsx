@@ -4,12 +4,63 @@ import { FeaturedWork } from "@/components/featured-work";
 import { Hero } from "@/components/hero";
 import { Reveal } from "@/components/reveal";
 import { SiteHeader } from "@/components/site-header";
-import { links, profile, stack } from "@/content/portfolio";
+import { links, profile, site, stack } from "@/content/portfolio";
 import { Code, EnvelopeSimple, GithubLogo, House, LinkedinLogo, XLogo } from "@phosphor-icons/react/dist/ssr";
 
 export default function Home() {
+  const profilePageJsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": `${site.url}/#website`,
+        url: site.url,
+        name: "Vaibhav Pandey",
+        alternateName: "0xVaibhav",
+      },
+      {
+        "@type": "ProfilePage",
+        "@id": `${site.url}/#profile`,
+        url: site.url,
+        name: site.title,
+        description: site.description,
+        isPartOf: { "@id": `${site.url}/#website` },
+        mainEntity: { "@id": `${site.url}/#person` },
+      },
+      {
+        "@type": "Person",
+        "@id": `${site.url}/#person`,
+        name: profile.name,
+        url: site.url,
+        image: site.image,
+        jobTitle: profile.title,
+        worksFor: {
+          "@type": "Organization",
+          name: "CreateOS",
+          url: "https://createos.sh",
+        },
+        sameAs: [links.github, links.linkedin, links.twitter],
+        knowsAbout: [
+          "Backend engineering",
+          "AI infrastructure",
+          "Distributed systems",
+          "Developer tooling",
+          "Go",
+          "Node.js",
+          "Python",
+        ],
+      },
+    ],
+  };
+
   return (
     <main id="top">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(profilePageJsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
       <div className="edge-blur edge-blur-top" aria-hidden="true"><span /><span /><span /></div>
       <nav className="dock" aria-label="Portfolio navigation">
         <a href="#top" aria-label="Home" data-tooltip="Home"><House weight="bold" /></a>

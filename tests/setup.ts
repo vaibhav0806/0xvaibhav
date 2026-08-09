@@ -9,6 +9,11 @@ vi.mock("@paper-design/shaders-react", () => ({
   MeshGradient: () => createElement("canvas", { "data-testid": "hero-shader-canvas" }),
 }));
 
+vi.mock("next/font/google", () => ({
+  Geist: () => ({ variable: "font-geist-sans" }),
+  Geist_Mono: () => ({ variable: "font-geist-mono" }),
+}));
+
 afterEach(() => cleanup());
 
 if (typeof window !== "undefined") {

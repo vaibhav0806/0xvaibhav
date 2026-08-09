@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { site } from "@/content/portfolio";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -13,8 +14,43 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Vaibhav Pandey - Backend & Infrastructure Engineer",
-  description: "Portfolio of Vaibhav Pandey, Backend & Infrastructure Engineer.",
+  metadataBase: new URL(site.url),
+  title: {
+    default: site.title,
+    template: "%s | Vaibhav Pandey",
+  },
+  description: site.description,
+  alternates: {
+    canonical: "/",
+  },
+  authors: [{ name: "Vaibhav Pandey", url: site.url }],
+  creator: "Vaibhav Pandey",
+  publisher: "Vaibhav Pandey",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  openGraph: {
+    type: "profile",
+    url: "/",
+    title: site.title,
+    description: site.description,
+    siteName: "Vaibhav Pandey",
+    locale: "en_IN",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: site.title,
+    description: site.description,
+    creator: "@ig_vaibhav1",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
