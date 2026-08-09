@@ -1,13 +1,6 @@
 import "@testing-library/jest-dom/vitest";
 import { cleanup } from "@testing-library/react";
-import { createElement } from "react";
 import { afterEach, vi } from "vitest";
-
-process.env.NEXT_PUBLIC_LOGO_DEV_TOKEN = "pk_test";
-
-vi.mock("@paper-design/shaders-react", () => ({
-  MeshGradient: () => createElement("canvas", { "data-testid": "hero-shader-canvas" }),
-}));
 
 vi.mock("next/font/google", () => ({
   Geist: () => ({ variable: "font-geist-sans" }),

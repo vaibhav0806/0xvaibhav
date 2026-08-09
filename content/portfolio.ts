@@ -1,5 +1,5 @@
 export type WorkItem = { title: string; eyebrow: string; period: string; description: string; stack: string[]; href?: string; caseStudy?: string };
-export type ExperienceItem = { company: string; role: string; period: string; href: string };
+export type ExperienceItem = { company: string; role: string; period: string; href: string; logo: string };
 
 export const site = {
   url: "https://www.0xvaibhav.com",
@@ -38,12 +38,12 @@ export const featuredWork: WorkItem[] = [
 ];
 
 export const experience: ExperienceItem[] = [
-  { company: "CreateOS", role: "Software Engineer", period: "Apr 2026 - Present", href: "https://createos.sh" },
-  { company: "CoinDCX", role: "Engineering Intern to Associate Software Engineer", period: "Nov 2024 - Mar 2026", href: "https://coindcx.com" },
-  { company: "Okto", role: "Software Engineer, Freelance", period: "Aug 2024 - Nov 2024", href: "https://okto.tech" },
-  { company: "Push Chain", role: "Integration and Ecosystem Intern", period: "Oct 2023 - Aug 2024", href: "https://push.org" },
-  { company: "Instadapp", role: "Workflow Engineer", period: "Mar 2024 - Apr 2024", href: "https://instadapp.io" },
-  { company: "vishwa.ai", role: "Product Engineering Intern", period: "Oct 2023 - Dec 2023", href: "https://vishwa.ai" },
+  { company: "CreateOS", role: "Software Engineer", period: "Apr 2026 - Present", href: "https://createos.sh", logo: "/logos/createos.webp" },
+  { company: "CoinDCX", role: "Engineering Intern to Associate Software Engineer", period: "Nov 2024 - Mar 2026", href: "https://coindcx.com", logo: "/logos/coindcx.webp" },
+  { company: "Okto", role: "Software Engineer, Freelance", period: "Aug 2024 - Nov 2024", href: "https://okto.tech", logo: "/logos/okto.webp" },
+  { company: "Push Chain", role: "Integration and Ecosystem Intern", period: "Oct 2023 - Aug 2024", href: "https://push.org", logo: "/logos/push-chain.webp" },
+  { company: "Instadapp", role: "Workflow Engineer", period: "Mar 2024 - Apr 2024", href: "https://instadapp.io", logo: "/logos/instadapp.webp" },
+  { company: "vishwa.ai", role: "Product Engineering Intern", period: "Oct 2023 - Dec 2023", href: "https://vishwa.ai", logo: "/logos/vishwa.webp" },
 ];
 
 export const stack = [

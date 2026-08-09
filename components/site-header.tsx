@@ -10,8 +10,8 @@ export function SiteHeader({ homeHref = "#top" }: SiteHeaderProps) {
       <a href={homeHref} className="identity-link" aria-label="Vaibhav Pandey, home">
         <Image
           className="identity-image"
-          src="https://github.com/vaibhav0806.png?size=96"
-          alt="Vaibhav Pandey"
+          src="/avatar.jpg"
+          alt=""
           width={36}
           height={36}
           priority

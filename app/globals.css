@@ -36,11 +36,10 @@ a:focus-visible { outline: 1px solid var(--text); outline-offset: 4px; }
 
 .hero { position: relative; isolation: isolate; padding-bottom: 128px; }
 .hero > :not(.hero-shader) { position: relative; z-index: 1; }
-.hero-shader { position: absolute; top: -138px; left: 50%; z-index: 0; width: min(1040px, 100vw); height: 440px; overflow: hidden; opacity: .32; pointer-events: none; transform: translateX(-50%); filter: saturate(.52) contrast(1.06); mask-image: radial-gradient(ellipse 64% 74% at 66% 38%, black 0 34%, rgba(0,0,0,.72) 52%, transparent 76%); }
-.hero-shader canvas { position: absolute !important; inset: 0; z-index: 1; }
+.hero-shader { position: absolute; top: -138px; left: 50%; z-index: 0; width: min(1040px, 100vw); height: 440px; overflow: hidden; opacity: .32; pointer-events: none; transform: translateX(-50%); mask-image: radial-gradient(ellipse 64% 74% at 66% 38%, black 0 34%, rgba(0,0,0,.72) 52%, transparent 76%); }
 .hero-shader::before, .hero-shader::after { content: ""; position: absolute; pointer-events: none; }
-.hero-shader::before { inset: -24%; z-index: 0; background: radial-gradient(circle at 22% 38%, rgba(154,174,163,.38), transparent 28%), radial-gradient(circle at 72% 30%, rgba(70,87,79,.56), transparent 31%), radial-gradient(ellipse at 58% 76%, rgba(116,132,123,.32), transparent 36%); filter: blur(18px); animation: hero-gradient-drift 16s var(--ease-out) infinite alternate; }
-.hero-shader::after { inset: -16%; z-index: 2; background: radial-gradient(ellipse at 28% 64%, rgba(183,194,188,.12), transparent 34%), radial-gradient(ellipse at 76% 42%, rgba(114,132,122,.14), transparent 38%); mix-blend-mode: screen; animation: hero-gradient-counterdrift 21s ease-in-out infinite alternate; }
+.hero-shader::before { inset: -24%; z-index: 0; background: radial-gradient(circle at 22% 38%, rgba(154,174,163,.38), transparent 28%), radial-gradient(circle at 72% 30%, rgba(70,87,79,.56), transparent 31%), radial-gradient(ellipse at 58% 76%, rgba(116,132,123,.32), transparent 36%); animation: hero-gradient-drift 16s var(--ease-out) infinite alternate; }
+.hero-shader::after { inset: -16%; z-index: 2; background: radial-gradient(ellipse at 28% 64%, rgba(183,194,188,.12), transparent 34%), radial-gradient(ellipse at 76% 42%, rgba(114,132,122,.14), transparent 38%); animation: hero-gradient-counterdrift 21s ease-in-out infinite alternate; }
 
 @keyframes hero-gradient-drift {
   from { transform: translate3d(-5%, -2%, 0) scale(1.02) rotate(-2deg); }
@@ -91,8 +90,9 @@ a:focus-visible { outline: 1px solid var(--text); outline-offset: 4px; }
 .chapter-heading h2 { margin-bottom: 0; }
 .work-list { display: grid; gap: 6px; }
 .work-row { position: relative; margin: 0 -14px; border-radius: 9px; transition: opacity 220ms ease; }
-.work-hover-bg { position: absolute; inset: 0; z-index: 0; border-radius: inherit; background: var(--surface-hover); pointer-events: none; }
-.work-row > a, .work-row > div:not(.work-hover-bg) { position: relative; z-index: 1; display: block; padding: 15px 14px 16px; border-radius: inherit; }
+.work-row::before { content: ""; position: absolute; inset: 0; z-index: 0; border-radius: inherit; background: var(--surface-hover); opacity: 0; pointer-events: none; transition: opacity 180ms ease; }
+.work-row:hover::before, .work-row:focus-within::before { opacity: 1; }
+.work-row > a, .work-row > div { position: relative; z-index: 1; display: block; padding: 15px 14px 16px; border-radius: inherit; }
 .work-row > a { transition: transform 240ms var(--ease-out); }
 .work-heading { display: flex; align-items: center; justify-content: space-between; gap: 18px; }
 .work-title { display: flex; align-items: center; gap: 10px; min-width: 0; }
@@ -205,7 +205,7 @@ a:focus-visible { outline: 1px solid var(--text); outline-offset: 4px; }
   .case-study-sections { padding: 62px 0 56px; }
   .case-study-sections section { grid-template-columns: 1fr; gap: 18px; padding-bottom: 54px; }
   .case-study-footer { gap: 16px; }
-  .edge-blur { height: 84px; }
+  .edge-blur { display: none; }
 }
 
 @media (max-width: 340px) {

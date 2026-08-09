@@ -1,4 +1,4 @@
-import { fireEvent, render, screen, within } from "@testing-library/react";
+import { render, screen, within } from "@testing-library/react";
 import { expect, test } from "vitest";
 import Home from "@/app/page";
 
@@ -11,7 +11,8 @@ test("leads with the approved compact positioning", () => {
       name: "Backend Engineer & Infrastructure Builder.",
     }),
   ).toBeVisible();
-  expect(screen.getByRole("img", { name: "Vaibhav Pandey" })).toBeVisible();
+  const avatar = document.querySelector(".identity-image");
+  expect(avatar).toHaveAttribute("alt", "");
   expect(screen.getByRole("heading", { level: 2, name: "About" })).toBeVisible();
   expect(screen.getByRole("heading", { level: 2, name: "Featured work" })).toBeVisible();
   expect(screen.getByRole("navigation", { name: "Portfolio navigation" })).toBeVisible();
@@ -107,18 +108,13 @@ test("links and expands every experience company", () => {
   expect(experience.querySelectorAll(".experience-logo")).toHaveLength(companies.length);
 });
 
-test("moves one shared highlight through featured work", () => {
+test("keeps featured work links accessible without overriding their names", () => {
   render(<Home />);
   const era = screen.getByRole("heading", { name: "era" }).closest("article");
-  const kairo = screen.getByRole("heading", { name: "Kairo" }).closest("article");
+  const link = within(era!).getByRole("link");
 
-  fireEvent.mouseEnter(era!);
-  expect(document.querySelectorAll(".work-hover-bg")).toHaveLength(1);
-  expect(era!.querySelector(".work-hover-bg")).not.toBeNull();
-
-  fireEvent.mouseEnter(kairo!);
-  expect(kairo!.querySelector(".work-hover-bg")).not.toBeNull();
-  expect(document.querySelectorAll(".work-hover-bg")).toHaveLength(1);
+  expect(link).not.toHaveAttribute("aria-label");
+  expect(link).toHaveAccessibleName(/era ephemeral runtime agent/i);
 });
 
 test("shows the evidenced technical breadth in grouped skills", () => {

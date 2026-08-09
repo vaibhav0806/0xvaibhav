@@ -8,4 +8,5 @@ test("keeps portfolio content visible in server-rendered HTML", () => {
   const html = renderToString(<Home />);
   expect(html).not.toContain("opacity:0");
   expect(html).not.toContain("translateY(16px)");
+  expect(html).not.toContain("<canvas");
 });

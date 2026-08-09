@@ -1,16 +1,10 @@
-"use client";
-
 import type { WorkItem } from "@/content/portfolio";
-import { motion } from "motion/react";
 
 type ProjectRowProps = {
   work: WorkItem;
-  active: boolean;
-  reduceMotion: boolean;
-  onActivate: () => void;
 };
 
-export function ProjectRow({ work, active, reduceMotion, onActivate }: ProjectRowProps) {
+export function ProjectRow({ work }: ProjectRowProps) {
   const primaryHref = work.caseStudy ?? work.href;
   const isExternal = primaryHref?.startsWith("http");
   const content = (
@@ -31,17 +25,7 @@ export function ProjectRow({ work, active, reduceMotion, onActivate }: ProjectRo
   );
 
   return (
-    <article className="work-row" onMouseEnter={onActivate} onFocus={onActivate}>
-      {active && (
-        <motion.div
-          className="work-hover-bg"
-          layoutId="featured-work-hover"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={reduceMotion ? { duration: 0 } : { type: "spring", stiffness: 360, damping: 32, mass: 0.6 }}
-          aria-hidden="true"
-        />
-      )}
+    <article className="work-row">
       {primaryHref ? (
         <a href={primaryHref} target={isExternal ? "_blank" : undefined} rel={isExternal ? "noreferrer" : undefined}>{content}</a>
       ) : (
