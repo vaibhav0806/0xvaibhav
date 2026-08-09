@@ -186,6 +186,7 @@ a:focus-visible { outline: 1px solid var(--text); outline-offset: 4px; }
   .hero-shader { top: -112px; width: 100vw; height: 360px; opacity: .22; mask-image: radial-gradient(ellipse 74% 72% at 64% 34%, black 0 28%, rgba(0,0,0,.65) 48%, transparent 74%); }
   .hero h1 { letter-spacing: -.075em; }
   .hero-line { gap: .24em; }
+  .hero-line-muted { flex-wrap: wrap; }
   .hero-intro { margin-top: 32px; }
   .chapter { padding-bottom: 96px; }
   .experience-list li { grid-template-columns: 1fr auto; gap: 3px 12px; padding: 10px 0; }
