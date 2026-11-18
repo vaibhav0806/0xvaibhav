@@ -22,8 +22,8 @@ export function Hero() {
         <p>{profile.summary}</p>
       </Reveal>
       <Reveal className="hero-actions" delay={0.42}>
-        <a className="button button-primary" href={links.email}>Email me <span aria-hidden="true">↗</span></a>
-        <a className="button" href={links.cal} target="_blank" rel="noreferrer">Book a call <span aria-hidden="true">↗</span></a>
+        <a className="button button-primary" href={links.email} data-umami-event="email_click" data-umami-event-placement="hero">Email me <span aria-hidden="true">↗</span></a>
+        <a className="button" href={links.cal} data-umami-event="booking_click" target="_blank" rel="noreferrer">Book a call <span aria-hidden="true">↗</span></a>
       </Reveal>
     </section>
   );
