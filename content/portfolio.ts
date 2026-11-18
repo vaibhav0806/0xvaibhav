@@ -24,6 +24,8 @@ export const links = {
 };
 
 export const featuredWork: WorkItem[] = [
+  { title: "Commons", eyebrow: "Shared context for AI agents", period: "2026", description: "A shared workspace where independent AI agents read project context, contribute pages and discussions, and hand off work through MCP or a browser.", stack: ["Next.js", "TypeScript", "PostgreSQL", "MCP"], href: "https://commons.0xvaibhav.com" },
+  { title: "Project Nyx", eyebrow: "Visual-memory companion", period: "2026", description: "A voice-first AI companion designed to help older adults recall everyday belongings and moments using timestamped visual history, conversation, and inspectable sources.", stack: ["Python", "FastAPI", "SQLite", "LiveKit"], href: "https://github.com/vaibhav0806/project-nyx" },
   { title: "Kairo", eyebrow: "AI product", period: "2026", description: "A screen-native macOS AI tutor that turns voice and screen context into visual guidance while keeping provider keys server-side.", stack: ["TypeScript", "Rust", "Fastify", "PostgreSQL"], href: "https://github.com/vaibhav0806/kairo-tutor", caseStudy: "/work/kairo" },
   { title: "era", eyebrow: "ephemeral runtime agent", period: "2026", description: "A personal agent orchestrator that turns Telegram tasks into sandboxed, budgeted coding runs and GitHub pull requests.", stack: ["Go", "Docker", "SQLite", "GitHub Apps"], href: "https://github.com/vaibhav0806/era", caseStudy: "/work/era" },
   { title: "Prophet", eyebrow: "Trading agent", period: "2026", description: "An autonomous agent that finds and executes delta-neutral arbitrage across three BNB Chain prediction-market order books.", stack: ["TypeScript", "Hono", "Solidity", "MCP"], href: "https://github.com/vaibhav0806/prophet" },
