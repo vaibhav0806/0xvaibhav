@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { site } from "@/content/portfolio";
@@ -63,6 +64,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full flex flex-col">
         {children}
         <Analytics />
+        <Script
+          src="https://analytics.0xvaibhav.com/script.js"
+          data-website-id="1f13dfeb-8bbf-48f3-b6d8-f86fefc38193"
+          data-domains="0xvaibhav.com,www.0xvaibhav.com"
+        />
       </body>
     </html>
   );
