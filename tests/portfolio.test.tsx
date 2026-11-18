@@ -22,7 +22,9 @@ test("leads with the approved compact positioning", () => {
 
 test("shows the approved public project archive and a direct contact link", () => {
   render(<Home />);
-  expect(screen.getAllByRole("article")).toHaveLength(11);
+  expect(screen.getAllByRole("article")).toHaveLength(13);
+  expect(screen.getByRole("heading", { name: "Commons" }).closest("a")).toHaveAttribute("href", "https://commons.0xvaibhav.com");
+  expect(screen.getByRole("heading", { name: "Project Nyx" }).closest("a")).toHaveAttribute("href", "https://github.com/vaibhav0806/project-nyx");
   expect(screen.getByRole("heading", { name: "Kairo" })).toBeVisible();
   expect(screen.getByRole("heading", { name: "Prophet" })).toBeVisible();
   expect(screen.getByRole("heading", { name: "DFlow SDK" })).toBeVisible();
@@ -41,11 +43,12 @@ test("shows the approved public project archive and a direct contact link", () =
   expect(screen.getByRole("link", { name: /email vaibhav/i })).toHaveAttribute("href", "mailto:vaibhav.pandey0806@gmail.com");
 });
 
-test("keeps Kairo first in featured work", () => {
+test("leads featured work with the latest projects", () => {
   render(<Home />);
-  const [firstProject] = screen.getAllByRole("article");
+  const [firstProject, secondProject] = screen.getAllByRole("article");
 
-  expect(within(firstProject).getByRole("heading", { name: "Kairo" })).toBeVisible();
+  expect(within(firstProject).getByRole("heading", { name: "Commons" })).toBeVisible();
+  expect(within(secondProject).getByRole("heading", { name: "Project Nyx" })).toBeVisible();
 });
 
 test("links flagship projects to internal case studies", () => {
